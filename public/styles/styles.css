@@ -1,0 +1,8 @@
+.list-group-item {
+  line-height: 2.5;
+}
+
+.bg {
+  height: 100vh;
+  background-size: cover;
+}

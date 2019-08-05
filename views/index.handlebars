@@ -1,0 +1,53 @@
+
+<div id="home">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <p>Sign up now and start sharing your thoughts.</p>
+      <form name="blogForm" id="blogForm" methos="post" action="/blogs" novalidate>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Blog Title" id="blog-title-form" required
+              data-validation-required-message="Please enter a title for your blog.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Sub Title</label>
+            <input type="text" class="form-control" placeholder="Sub Title" id="blog-sub-title-form" required
+              data-validation-required-message="Please enter a sub title for your blog.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <label>Bio</label>
+            <textarea rows="7" class="form-control" placeholder="Tell your story." id="blog-content-form"
+              data-validation-required-message="Tell us a little bit about yourself."></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <button id="submit-blog-button" class="btn btn-primary" >Publish</button>
+        </div>
+        </form>
+        <hr>
+        <h3>My Blogs:</h3>
+        <ul id="blogs-list" class="list-group">
+          {{#each blogs}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="blogs/{{this.id}}">{{this.title}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/blogs.js"></script>
+

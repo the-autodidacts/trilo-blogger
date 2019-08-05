@@ -1,0 +1,35 @@
+<!-- Page Header -->
+<div class="bg" style="background-image: url('img/post-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading mt-4 clearfix">
+                <h1>Today is a great day!</h1>
+                <form name="signin-form" id="signin-form" method="post" action="/users" novalidate>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>email</label>
+                            <input type="email" class="form-control" placeholder="Email" id="signin-email" required
+                                data-validation-required-message="Please enter your email address.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password" id="signin-password" required
+                                data-validation-required-message="Please enter your passwrod.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" id="signUpButton">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
