@@ -1,20 +1,9 @@
-var db = require("../models");
 var authController = require("../controllers/authController");
+var userController = require("../controllers/userController")
 module.exports = function(app) {
-  // Render 404 page for any unmatched routes
-  app.get("/users", function(req, res) {
-    db.User.findAll({}).then(function(users) {
-      res.render("users", {
-        users: users
-      });
-    });
-  });
 
-  app.post("/users", function(req, res) {
-    db.User.create(req.body).then(function(user) {
-      res.json(user);
-    });
-  });
+  app.get("/users", userController.getUsers);
+  app.post("/users", userController.createUser);
 
   app.get("/users/new", authController.signup);
   app.get("/signin", authController.signin);

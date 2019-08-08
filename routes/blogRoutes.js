@@ -1,22 +1,12 @@
+var blogController = require('../controllers/blogController')
 var db = require("../models");
 
 module.exports = function(app) {
   // Load index page will all blogs
-  app.get("/blogs", function(req, res) {
-    db.Blog.findAll({}).then(function(blogs) {
-      res.render("index", {
-        msg: "Welcome!",
-        blogs: blogs
-      });
-    });
-  });
+  app.get("/blogs", blogController.getBlogs);
 
   // Get all blogs
-  app.get("/api/blogs", function(req, res) {
-    db.Blog.findAll({}).then(function(blogs) {
-      res.json(blogs);
-    });
-  });
+  app.get("/api/blogs", blogController.getJsonBlogs)
 
   // Create a new blog
   app.post("/blogs", function(req, res) {
